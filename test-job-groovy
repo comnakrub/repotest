@@ -5,8 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 terraform {
-                required_version = ">= 0.15.4, < 0.16.0"
-}
+                    
                 sh "terraform init"
                 
             }
