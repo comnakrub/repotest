@@ -1,37 +1,12 @@
 pipeline {
     agent any
 
-    environment {
-        TERRAFORM_HOME = "/path/to/terraform-1.7.2"  // Update this path
-    }
-
-    stages {
-        stage('Initialize') {
-            steps {
-                script {
-                    withEnv(["PATH+TERRAFORM=${env.TERRAFORM_HOME}/bin:${env.PATH}"]) {
-                        sh 'terraform init'
-                    }
-                }
-            }
-        }
-        // ... Other stages
-    }
-}
-
-
-pipeline {
-    agent any
-
     stages {
         stage('Hello') {
             steps {
                 sh "terraform --version"
-                
-                sh """
-                terraform init
-                terraform plan
-                """
+                sh "terraform init"
+                sh "terraform plan"
             }
         }
     }
