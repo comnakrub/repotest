@@ -3,8 +3,7 @@ pipeline {
 
     stages {
         stage('Hello') {
-            steps {
-                terraform {    
+            steps {   
                 sh "terraform --version"               
             }
         }
