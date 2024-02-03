@@ -4,10 +4,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                terraform {
-                    
-                sh "terraform init"
-                
+                terraform {    
+                sh "terraform --version"               
             }
         }
     }
